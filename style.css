@@ -149,23 +149,33 @@ header nav ul li a:hover::after {
   }
 }
 
-/* Mobile Friendly */
+/* Mobile Navbar Full Right Side Overlay */
 @media (max-width: 768px) {
-  header {
-    padding: 15px 20px;
-  }
-  header nav ul {
+  .nav-links {
+    position: fixed;   /* absolute ki badulu fixed */
+    top: 0;            /* top nunchi start */
+    right: -100%;      /* by default hide avvali */
+    height: 100%;      /* full screen height */
+    width: 250px;      /* right side width (adjust cheyavachu) */
+    background-color: #e91e63;  /* nee color */
     flex-direction: column;
-    background: rgba(0,0,0,0.8);
-    position: absolute;
-    top: 100%;
-    right: -100%;
-    width: 100%;
-    padding: 20px 0;
+    align-items: flex-start;
+    padding: 60px 20px;
     transition: right 0.3s ease;
+    z-index: 999;   /* content kinda povakudadhu */
   }
-  header nav ul.show {
-    right: 0;
+
+  .nav-links.show {
+    right: 0;   /* open ayyaka slide avvali */
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+  }
+
+  .nav-links li a {
+    color: #fff;   /* link text white */
+    font-size: 18px;
   }
 }
 
