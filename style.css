@@ -133,9 +133,10 @@ header .logo span {
     position: fixed;
     top: 0;
     right: 0;
-    height: 50%;              /* top half screen matrame */
-    width: 100%;              /* full width */
-    background-color: #e91e63; /* red-pink background */
+    height: 50vh;               /* only half screen height */
+    width: 100%;                /* full width */
+    background-color: #e91e63;  /* red-pink background */
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -146,7 +147,7 @@ header .logo span {
   }
 
   .nav-links.show {
-    transform: translateY(0); /* slide down open */
+    transform: translateY(0);   /* slide down open */
   }
 
   .nav-links li {
@@ -157,10 +158,13 @@ header .logo span {
     color: #000;   /* black text color */
     font-size: 18px;
     font-weight: 600;
+    text-decoration: none;
   }
 
   .hamburger {
     display: block;
+    cursor: pointer;
+    z-index: 1000; /* nav links ki paina untundi */
   }
 }
 
