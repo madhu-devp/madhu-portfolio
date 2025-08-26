@@ -127,46 +127,51 @@ header .logo span {
   cursor: pointer;
 }
 
-/* Mobile Navbar Top Half Overlay */
+/* Mobile Navbar Overlay (Below Header) */
 @media (max-width: 768px) {
   .nav-links {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 50vh;               /* only half screen height */
-    width: 100%;                /* full width */
-    background-color: #e91e63;  /* red-pink background */
-    display: flex;
+    position: absolute;
+    top: 60px;               /* start just below header */
+    left: 0;
+    height: 50vh;           /* smaller height, not half screen */
+    width: 100%;             
+    background-color: #e91e63;
     flex-direction: column;
     align-items: center;
+    font-weight: bold;
     justify-content: center;
-    padding: 20px;
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
+    padding: 15px 0;
+    border-radius: 5px;
+    transform: translateY(-120%); /* hide upwards */
+    transition: transform 0.3s ease-in-out;
     z-index: 999;
   }
 
   .nav-links.show {
-    transform: translateY(0);   /* slide down open */
+    transform: translateY(0); /* slide down under header */
   }
 
   .nav-links li {
-    margin: 15px 0;
+    margin: 8px 0;
   }
 
   .nav-links li a {
-    color: #000;   /* black text color */
-    font-size: 18px;
-    font-weight: 600;
+    color: #000;   
+    font-size: 17px;
+    font-weight: 500;
     text-decoration: none;
   }
 
   .hamburger {
     display: block;
     cursor: pointer;
-    z-index: 1000; /* nav links ki paina untundi */
+    font-size: 28px;
+    color: white;
+    z-index: 1001;
   }
 }
+
+
 
 @keyframes navbarFadeIn {
   from {
